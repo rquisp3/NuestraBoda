@@ -1,1 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CECOM Fleet – Consulta por Placa</title>
+    <link rel="icon" type="image/png" href="truck-dinet.png" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
 
+    <style>
+      :root {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+        color-scheme: dark;
+      }
+
+      /* Asegura que tanto html como body ocupen el 100% del viewport */
+      html,
+      body {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        overflow: hidden; /* Evita barras de desplazamiento si el iframe encaja perfectamente */
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        /* Fondo opcional si el iframe no cubre completamente o tiene partes transparentes */
+        background: radial-gradient(circle at top, #1f2937 0, #020617 60%);
+        color: #e5e7eb;
+        display: flex; /* Permite que el contenedor del iframe se ajuste al 100% */
+      }
+
+      .frame-wrapper {
+        /* Ocupa el 100% del alto y ancho del body */
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        border: none; /* Elimina cualquier borde */
+        background: #020617;
+        /* Puedes eliminar o simplificar estos estilos si ya no necesitas el efecto de "ventana" */
+        border-radius: 0;
+        overflow: hidden;
+        box-shadow: none;
+      }
+
+      iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="frame-wrapper">
+      <iframe
+        src="https://script.google.com/macros/s/AKfycbyJynO04sYugiMRxh3NLVHyCaX3JEJMyIbKc2U5YcBEbjFZ_smbC5Tl3hYMzyDMR_Av/exec"
+        title="Nos Casamos - Sabina & Ricardo"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
+  </body>
+</html>
