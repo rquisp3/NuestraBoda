@@ -16,14 +16,13 @@
         color-scheme: dark;
       }
 
-      /* Asegura que tanto html como body ocupen el 100% del viewport */
       html,
       body {
         height: 100%;
         width: 100%;
         margin: 0;
         padding: 0;
-        overflow: hidden; /* Evita barras de desplazamiento si el iframe encaja perfectamente */
+        overflow: hidden;
       }
 
       * {
@@ -31,24 +30,19 @@
       }
 
       body {
-        /* Fondo opcional si el iframe no cubre completamente o tiene partes transparentes */
         background: radial-gradient(circle at top, #1f2937 0, #020617 60%);
         color: #e5e7eb;
-        display: flex; /* Permite que el contenedor del iframe se ajuste al 100% */
+        display: flex;
       }
 
       .frame-wrapper {
-        /* Ocupa el 100% del alto y ancho del body */
         width: 100%;
         height: 100%;
         margin: 0;
         padding: 0;
-        border: none; /* Elimina cualquier borde */
+        border: none;
         background: #020617;
-        /* Puedes eliminar o simplificar estos estilos si ya no necesitas el efecto de "ventana" */
-        border-radius: 0;
         overflow: hidden;
-        box-shadow: none;
       }
 
       iframe {
@@ -62,11 +56,30 @@
   <body>
     <div class="frame-wrapper">
       <iframe
-        src="https://script.google.com/macros/s/AKfycbyJynO04sYugiMRxh3NLVHyCaX3JEJMyIbKc2U5YcBEbjFZ_smbC5Tl3hYMzyDMR_Av/exec"
+        id="wedding-frame"
+        src=""
         title="Nos Casamos - Sabina & Ricardo"
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"
       ></iframe>
     </div>
+
+    <script>
+      // ================================
+      // TOMAR PARÁMETROS DE LA URL
+      // ================================
+      const params = new URLSearchParams(window.location.search);
+      const guestId = params.get("g"); // ej: g=101
+
+      // URL base de tu WebApp (sin parámetros)
+      const baseUrl =
+        "https://script.google.com/macros/s/AKfycbyJynO04sYugiMRxh3NLVHyCaX3JEJMyIbKc2U5YcBEbjFZ_smbC5Tl3hYMzyDMR_Av/exec";
+
+      // Construir URL final
+      const finalUrl = guestId ? `${baseUrl}?g=${guestId}` : baseUrl;
+
+      // Asignar al iframe
+      document.getElementById("wedding-frame").src = finalUrl;
+    </script>
   </body>
 </html>
