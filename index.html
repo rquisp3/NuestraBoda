@@ -57,29 +57,12 @@
     <div class="frame-wrapper">
       <iframe
         id="wedding-frame"
-        src=""
+        src="https://script.google.com/macros/s/AKfycbyJynO04sYugiMRxh3NLVHyCaX3JEJMyIbKc2U5YcBEbjFZ_smbC5Tl3hYMzyDMR_Av/exec"
         title="Nos Casamos - Sabina & Ricardo"
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"
       ></iframe>
     </div>
 
-    <script>
-      // ================================
-      // TOMAR PARÁMETROS DE LA URL
-      // ================================
-      const params = new URLSearchParams(window.location.search);
-      const guestId = params.get("g"); // ej: g=101
-
-      // URL base de tu WebApp (sin parámetros)
-      const baseUrl =
-        "https://script.google.com/macros/s/AKfycbyJynO04sYugiMRxh3NLVHyCaX3JEJMyIbKc2U5YcBEbjFZ_smbC5Tl3hYMzyDMR_Av/exec";
-
-      // Construir URL final
-      const finalUrl = guestId ? `${baseUrl}?g=${guestId}` : baseUrl;
-
-      // Asignar al iframe
-      document.getElementById("wedding-frame").src = finalUrl;
-    </script>
   </body>
 </html>
